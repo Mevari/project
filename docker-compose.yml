@@ -1,0 +1,34 @@
+version: '3.7'
+
+services:
+  web:
+   build: ./nginx
+   container_name: project_web
+   ports:
+    - 80
+   volumes:
+    - ./:/var/www/html
+   links:
+    - app
+  app:
+   build:
+     context: .
+     dockerfile: Dockerfile
+   container_name: project_app
+   volumes:
+    - ./:/var/www/html
+    - ./php/xdebug.ini:/usr/local/etc/php/conf.d/xdebug.ini
+  mysql:
+    build: ./mysql
+    container_name: project_mysql
+    command: --default-authentication-plugin=mysql_native_password
+    environment:
+      MYSQL_ROOT_PASSWORD: 7NazT831
+    volumes:
+      - ./mysql/db:/var/lib/mysql
+    ports:
+      - 3306
+networks:
+ default:
+   external:
+     name: docker_default
