@@ -28,5 +28,4 @@ class Validator implements \App\Application\Validator\ValidatorInterface
 
         throw new ValidatorException($errors);
     }
-
 }

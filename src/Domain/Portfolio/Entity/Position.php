@@ -48,5 +48,4 @@ class Position
     {
         return new PositionDTO($this->uuid, $this->symbol, $this->price, $this->quantity);
     }
-
 }

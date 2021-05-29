@@ -42,5 +42,4 @@ class AddPositionNormalizer implements DenormalizerAwareInterface, DenormalizerI
     {
         return $type === AddPositionRequestDTO::class;
     }
-
 }

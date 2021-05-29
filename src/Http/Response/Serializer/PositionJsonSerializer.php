@@ -15,5 +15,4 @@ class PositionJsonSerializer extends JsonSerializer
         );
         parent::__construct($normalizers, $encoders);
     }
-
 }
