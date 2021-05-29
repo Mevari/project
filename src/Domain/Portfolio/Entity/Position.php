@@ -2,6 +2,7 @@
 
 namespace App\Domain\Portfolio\Entity;
 
+use App\Domain\Portfolio\Entity\DTO\PositionDTO;
 use App\Domain\Portfolio\ValueObject\Price;
 use App\Domain\Portfolio\ValueObject\Quantity;
 use App\Domain\Portfolio\ValueObject\Symbol;
@@ -9,7 +10,7 @@ use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Uid\Uuid;
 
 /**
- * @ORM\Entity()
+ * @ORM\Entity(repositoryClass="App\Domain\Portfolio\Repository\PositionRepository")
  */
 class Position
 {
@@ -42,4 +43,10 @@ class Position
         $this->price = $price;
         $this->quantity = $quantity;
     }
+
+    public function toDTO(): PositionDTO
+    {
+        return new PositionDTO($this->uuid, $this->symbol, $this->price, $this->quantity);
+    }
+
 }

@@ -24,4 +24,14 @@ class Symbol
         $this->symbol = $symbol;
         $this->companyName = $companyName;
     }
+
+    public function getSymbol(): string
+    {
+        return $this->symbol;
+    }
+
+    public function getCompanyName(): ?string
+    {
+        return $this->companyName;
+    }
 }
