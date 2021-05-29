@@ -21,7 +21,7 @@ class PositionNormalizer implements NormalizerInterface, NormalizerAwareInterfac
      * @param string|null $format
      * @param array $context
      *
-     * @return array|\ArrayObject|bool|float|int|string|void|null
+     * @return array
      */
     public function normalize($position, string $format = null, array $context = [])
     {
@@ -35,5 +35,4 @@ class PositionNormalizer implements NormalizerInterface, NormalizerAwareInterfac
             'quantity' => $dto->quantity->getQuantity(),
         ];
     }
-
 }

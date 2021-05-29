@@ -13,7 +13,8 @@ interface ValidatorInterface
      * @param mixed $data
      * @param Constraint|Constraint[]|null $constraints The constraint(s) to validate against
      *
-     * @return mixed
+     * @return void
+     *
      * @throws ValidatorException
      */
     public function validate(mixed $data, Constraint|array|null $constraints = null): void;
