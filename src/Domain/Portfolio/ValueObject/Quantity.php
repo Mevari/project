@@ -16,10 +16,14 @@ class Quantity
 
     public function __construct(int $quantity)
     {
+        if ($quantity <= 0) {
+            throw new \InvalidArgumentException();
+        }
+
         $this->quantity = $quantity;
     }
 
-    public function getQuantity(): int
+    public function toInt(): int
     {
         return $this->quantity;
     }

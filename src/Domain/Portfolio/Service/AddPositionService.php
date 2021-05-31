@@ -4,10 +4,10 @@ namespace App\Domain\Portfolio\Service;
 
 use App\Domain\Portfolio\Entity\Position;
 use App\Domain\Portfolio\Repository\PositionRepositoryInterface;
+use App\Domain\Portfolio\Service\DTO\AddPositionDTO;
 use App\Domain\Portfolio\ValueObject\Price;
 use App\Domain\Portfolio\ValueObject\Quantity;
 use App\Domain\Portfolio\ValueObject\Symbol;
-use App\Http\Request\DTO\AddPositionRequestDTO;
 use Symfony\Component\Uid\Uuid;
 
 class AddPositionService
@@ -16,7 +16,7 @@ class AddPositionService
     {
     }
 
-    public function add(AddPositionRequestDTO $addDto): Position
+    public function add(AddPositionDTO $addDto): Position
     {
         $position = new Position(
             Uuid::v6(),

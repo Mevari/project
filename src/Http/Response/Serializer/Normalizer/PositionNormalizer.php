@@ -32,7 +32,7 @@ class PositionNormalizer implements NormalizerInterface, NormalizerAwareInterfac
             'symbol' => $dto->symbol->getSymbol(),
             'companyName' => $dto->symbol->getCompanyName(),
             'price' => $dto->price->getPrice(),
-            'quantity' => $dto->quantity->getQuantity(),
+            'quantity' => $dto->quantity->toInt(),
         ];
     }
 }

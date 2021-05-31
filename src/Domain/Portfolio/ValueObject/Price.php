@@ -16,6 +16,10 @@ class Price
 
     public function __construct(float $price)
     {
+        if ($price < 0) {
+            throw new \InvalidArgumentException();
+        }
+
         $this->price = $price;
     }
 
