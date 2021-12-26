@@ -12,6 +12,6 @@ class PositionResponse extends JsonResponse
     public function __construct(Position $position)
     {
         $data = (new PositionJsonSerializer())->serialize($position);
-        parent::__construct($data, Response::HTTP_OK, [], true);
+        parent::__construct($data, Response::HTTP_CREATED, [], true);
     }
 }
