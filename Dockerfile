@@ -36,8 +36,8 @@ RUN mkdir -p /var/log/supervisor
 RUN mkdir -p /var/run/supervisor
 COPY ./supervisor /etc/supervisor
 
-RUN  cp www.conf /usr/local/etc/php-fpm.d/www.conf \
-     cp .env.template .env && \
+RUN  cp www.conf /usr/local/etc/php-fpm.d/www.conf && \
+     cp .env.example .env
 
 
 RUN composer install -n
